@@ -6,19 +6,13 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background-main: linear-gradient(to right, oklch(0.704 0.14 182.503), oklch(0.623 0.214 259.815));
+  --background: #FFFFFFFF
+  --foreground: #353535FF;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: var(--background-main);
   font-family: Arial, Helvetica, sans-serif;
 }
