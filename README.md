@@ -7,12 +7,12 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 Here are some images showcasing the project:
 
 ![Homepage](public/images/pages/page-home.png)
-*HomePage*
+*Home Page*
 
 ![Contact Me](public/images/pages/page-contact.png)
-*HomePage*
+*Contact Me*
 
-![Technologies Used](public/images/svg/page-technologies.svg)
+![Technologies Used](public/images/svg/page-technologies.png)
 *My Technologies*
 
 ## Technologies Used
