@@ -12,7 +12,7 @@ Here are some images showcasing the project:
 ![Contact Me](public/images/pages/page-contact.png)
 *Contact Me*
 
-![Technologies Used](public/images/svg/page-technologies.png)
+![My Technologies](public/images/pages/page-technologies.png)
 *My Technologies*
 
 ## Technologies Used
