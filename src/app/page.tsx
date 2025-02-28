@@ -1,7 +1,6 @@
 import Button from "@/components/Button";
 import CareerCard from "@/components/CarrerCard";
 import StatCard from "@/components/StatCard";
-import TechnologyCard from "@/components/TechnologyCard";
 import { CiLinkedin } from "react-icons/ci";
 import { FiDownload } from "react-icons/fi";
 import { GrTechnology } from "react-icons/gr";
@@ -11,7 +10,7 @@ export default function Home() {
     <div className="w-full gap-4 flex flex-col px-4">
       <div className="flex flex-col md:flex-row justify-between items-center bg-white rounded-lg p-8">
         <div className="flex flex-col gap-4 items-center md:items-start">
-          <h1 className="text-5xl font-bold mb-4 text-gray-800 text-center md:text-left">Hello,I'm <br />Tiago Pinheiro</h1>
+          <h1 className="text-5xl font-bold mb-4 text-gray-800 text-center md:text-left">Hello,I&apos;m <br />Tiago Pinheiro</h1>
           <p className="text-sm text-gray-600 max-w-prose text-center md:text-left">
             Graduated in Software Engineering from Centro Universitário Municipal de Franca - Uni-Facef, I have been working in web and mobile software development for about 5 years, building modern, scalable, and testable solutions for different industries.
           </p>
@@ -25,7 +24,6 @@ export default function Home() {
           </div>
         </div>
         <div className="w-64 h-64 bg-gray-200 rounded-lg mt-8 md:mt-0 md:mb-0">
-          {/* Add your image here */}
           <div className="w-full h-full flex items-center justify-center text-gray-400">
             <img src="/images/profile.JPEG" alt="Tiago Pinheiro" className="w-full h-full rounded-lg" />
           </div>
@@ -34,7 +32,6 @@ export default function Home() {
 
       <div className="flex flex-col md:flex-row justify-between items-center bg-white rounded-lg p-8">
         <div className="relative rounded-lg mb-8 md:mb-0 max-w-96">
-          {/* Add your image here */}
           <div className="w-full h-full flex items-center justify-center text-gray-400">
             <img src="/images/frontend-development.jpeg" alt="Tiago Pinheiro" className="w-full h-full rounded-lg" />
           </div>
@@ -57,7 +54,7 @@ export default function Home() {
         <div className="flex flex-col gap-4 items-center md:items-start">
           <h1 className="text-5xl font-bold mb-4 text-gray-800 text-center md:text-left">I am professional <br />frontend developer</h1>
           <p className="text-sm text-gray-600 max-w-prose text-center md:text-left">
-            With extensive experience in frontend development, I specialize in creating responsive and user-friendly web applications using modern technologies like <strong>React</strong>, <strong>Next.js</strong>, <strong>Tailwind CSS</strong>, <strong>TypeScript</strong>, <strong>Expo</strong>, etc. My expertise includes building clean, maintainable code with a strong focus on performance and accessibility. I'm passionate about creating seamless user experiences and staying up-to-date with the latest frontend development trends and best practices.
+            With extensive experience in frontend development, I specialize in creating responsive and user-friendly web applications using modern technologies like <strong>React</strong>, <strong>Next.js</strong>, <strong>Tailwind CSS</strong>, <strong>TypeScript</strong>, <strong>Expo</strong>, etc. My expertise includes building clean, maintainable code with a strong focus on performance and accessibility. I&apos;m passionate about creating seamless user experiences and staying up-to-date with the latest frontend development trends and best practices.
           </p>
           <Button href="/documents/CV-Tiago-Pinheiro.pdf" label="Download CV" className="bg-white border-1 border-blue-500 text-blue-500 mt-4 w-fit flex items-center gap-2" icon={<FiDownload />} blank={true} />
         </div>

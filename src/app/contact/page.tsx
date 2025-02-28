@@ -13,7 +13,7 @@ export default function Contact() {
           <div className="flex flex-col gap-6">
             <h2 className="text-2xl font-semibold text-gray-800">Get in Touch</h2>
             <p className="text-gray-600">
-              I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+              I&apos;m always open to discussing new projects, creative ideas or opportunities to be part of your visions.
             </p>
 
             <div className="flex flex-col gap-4">
