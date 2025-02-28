@@ -1,22 +1,41 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from "../Button";
 import { isMobile } from '@/utils/deviceHelpers';
 import { RiCloseLine, RiMenuLine } from 'react-icons/ri';
+import { GoCodeSquare } from 'react-icons/go';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mobile, setMobile] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const updateMobileStatus = () => {
+      setMobile(isMobile());
+    };
+
+    updateMobileStatus();
+    window.addEventListener('resize', updateMobileStatus);
+
+    return () => {
+      window.removeEventListener('resize', updateMobileStatus);
+    };
+  }, []);
+
   return (
     <div className="bg-gradient-to-r from-teal-500 to-blue-500">
       <div className="flex items-center justify-between max-w-screen-lg mx-auto h-16 p-4">
         <div className="flex items-center">
-          <h1 className="text-2xl font-bold">Tiago Pinheiro</h1>
+          <h1 className="text-2xl font-bold cursor-pointer flex flex-row gap-2 items-center" onClick={() => window.location.href = '/'}><GoCodeSquare />Tiago Pinheiro</h1>
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-white focus:outline-none">
@@ -27,21 +46,19 @@ export default function Header() {
             )}
           </button>
         </div>
-        {!isMobile() &&
+        {!mobile &&
           <div className={`flex-col md:flex-row md:flex space-y-2 md:space-y-0 md:space-x-4 ${isMenuOpen ? 'flex' : 'hidden'} md:flex`}>
             <Button label="Home" href="/" />
-            <Button label="About" href="/about" />
-            <Button label="Experience" href="/experience" />
+            <Button label="Technologies" href="/technologies" />
             <Button label="Contact" className="bg-white hover:bg-gray-50" href="/contact" />
           </div>
         }
       </div>
       {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg rounded-lg mt-2 p-4 flex flex-col gap-2">
-          <Button label="Home" href="/" />
-          <Button label="About" href="/about" />
-          <Button label="Experience" href="/experience" />
-          <Button label="Contact" className="bg-blue-500 text-white hover:text-white" href="/contact" />
+        <div className="md:hidden bg-white shadow-sm rounded-lg p-4 flex flex-col gap-2 absolute top-16 left-0 right-0 mx-4">
+          <Button label="Home" href="/" onClick={closeMenu} />
+          <Button label="Technologies" href="/technologies" onClick={closeMenu} />
+          <Button label="Contact" className="bg-blue-500 text-white hover:text-white" href="/contact" onClick={closeMenu} />
         </div>
       )}
     </div>
