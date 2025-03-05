@@ -9,7 +9,7 @@ type Store = {
 
 export const useStore = create<Store>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       language: 'en',
       isLanguageChanged: false,
       setLanguage: (language) => set((state) => ({

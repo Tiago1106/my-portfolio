@@ -1,7 +1,7 @@
 "use client";
 
-import { Fragment, useState } from "react";
-import { Dialog, DialogPanel, DialogTitle, Transition } from "@headlessui/react";
+import { Fragment } from "react";
+import { Dialog, DialogPanel, Transition } from "@headlessui/react";
 import { SelectLanguageProps } from "./types";
 import Button from "../Button";
 import { useStore } from "@/store/useStore";
