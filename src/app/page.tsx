@@ -1,13 +1,31 @@
+'use client'
 import Button from "@/components/Button";
 import CareerCard from "@/components/CarrerCard";
+import SelectLanguage from "@/components/SelectLanguage";
 import StatCard from "@/components/StatCard";
+import { useStore } from "@/store/useStore";
+import { useEffect, useState } from "react";
 import { CiLinkedin } from "react-icons/ci";
 import { FiDownload } from "react-icons/fi";
 import { GrTechnology } from "react-icons/gr";
 
 export default function Home() {
+  const { isLanguageChanged } = useStore();
+  const [isOpen, setIsOpen] = useState<boolean>(!isLanguageChanged);
+
+  useEffect(() => {
+    setIsOpen(!isLanguageChanged);
+  }, [isLanguageChanged]);
+
+  console.log(isLanguageChanged);
+
+  const handleClose = () => {
+    setIsOpen(false);
+  }
+
   return (
     <div className="w-full gap-4 flex flex-col px-4">
+      <SelectLanguage isOpen={isOpen} onClose={handleClose} />
       <div className="flex flex-col md:flex-row justify-between items-center bg-white rounded-lg p-8">
         <div className="flex flex-col gap-4 items-center md:items-start">
           <h1 className="text-5xl font-bold mb-4 text-gray-800 text-center md:text-left">Hello,I&apos;m <br />Tiago Pinheiro</h1>
@@ -15,7 +33,7 @@ export default function Home() {
             Graduated in Software Engineering from Centro Universitário Municipal de Franca - Uni-Facef, I have been working in web and mobile software development for about 5 years, building modern, scalable, and testable solutions for different industries.
           </p>
           <p className="text-sm text-gray-600 max-w-prose text-center md:text-left">
-          Currently, I work as a Front-End Developer, specializing in ReactJS and TypeScript, focused on delivering the best experience for users and business teams. I am driven by challenges and continuous learning, always striving to improve my skills and deliver high-quality solutions that I am proud of.
+            Currently, I work as a Front-End Developer, specializing in ReactJS and TypeScript, focused on delivering the best experience for users and business teams. I am driven by challenges and continuous learning, always striving to improve my skills and deliver high-quality solutions that I am proud of.
           </p>
           <Button label="Contact me" href="/contact" className="bg-blue-500 text-white mt-4 w-fit hover:text-white" />
           <div className="flex gap-4 w-full justify-center md:justify-start">
